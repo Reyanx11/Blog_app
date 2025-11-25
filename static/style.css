@@ -1,0 +1,49 @@
+body{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.custom-nav{
+    background-color: #223b5f;
+}
+.nav-link,
+.navbar-brand{
+    color: hsl(0, 0%, 100%);
+}
+
+.nav-link:hover,
+.navbar-brand:hover {
+    color: #7abaff;
+}
+
+
+.media.content-section{
+    background-color: rgb(248, 247, 247);
+    border: 2px solid #0b213f;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: auto;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.article-metadata{
+    border-bottom: 1px solid #3a3a3a;
+    margin-bottom: 5px;
+    padding: 3px 1px;
+    
+}
+.article-metadata a{
+    color: #567a9f;
+}
+.article-metadata a:hover{
+    color: #3A57E8;
+}
+.article-title{
+    color: #2f4a74;
+}
+.article-title:hover{
+    color: #3A57E8
+}
+
+.article-content{
+    white-space: pre-line;
+}
