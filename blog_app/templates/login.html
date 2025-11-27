@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="auth-page">
+        <form action="", method="POST">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Login</legend>
+
+                <div class="form-group">  <!--email label-->
+                    {{form.email.label(class = "form-contol-lable")}}
+
+                    {% if form.email.errors %} <!--checking for error-->
+                        {{ form.email(class= "form-control form-control-lg is-invalid")}}
+                        <div class="invalid-feedback">
+                            {% for error in errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+
+                    {% else %}
+                        {{form.email(class = "form-control form-control-lg")}}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">  <!--password label-->
+                    {{form.password.label(class = "form-contol-lable")}}
+
+                    {% if form.password.errors %} <!--checking for error-->
+                        {{ form.password(class= "form-control form-control-lg is-invalid")}}
+                        <div class="invalid-feedback">
+                            {% for error in errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+
+                    {% else %}
+                        {{form.password(class = "form-control form-control-lg")}}
+                    {% endif %}
+                </div>
+
+            </fieldset>
+            <div class="form-group">  <!--login btn-->
+                {{form.submit(class = "btn  submit-btn")}}
+            </div>
+            <div class="text-center mt-3">
+                <small class="text-muted d-block"> <!--forget password-->
+                    <a href="" class="text-decoration-none">Forgot password</a>
+                </small>
+                <small class="text-muted d-block mt-1">  <!--sign up-->
+                    <a href="{{url_for('register')}}" class="text-decoration-none">Sign up</a>
+                </small>
+            </div>
+        </form>
+    </div>
+{% endblock content %}
