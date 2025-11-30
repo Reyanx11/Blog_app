@@ -80,3 +80,22 @@ body{
     transform: translateY(-2px);
     box-shadow: 0px 5px 10px rgba(0,0,0,0.4);
 }
+
+
+.content-section{
+    background-color: rgb(248, 247, 247);
+    border: 2px solid #0b213f;
+    border-radius: 10px;
+    max-width: 750px;
+    margin: auto;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.account-img{
+    height: 125px;
+    width: 125px;
+    margin-right: 20px;
+    margin-bottom: 16px;
+}
+
