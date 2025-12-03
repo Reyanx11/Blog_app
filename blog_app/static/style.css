@@ -134,3 +134,9 @@ body{
 .delete-btn:hover {
     background-color: #e71010;
 }
+
+
+.paginate{
+    margin-top: 10px;
+    text-align: center;
+}
