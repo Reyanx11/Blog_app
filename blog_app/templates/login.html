@@ -44,7 +44,7 @@
             </div>
             <div class="text-center mt-3">
                 <small class="text-muted d-block"> <!--forget password-->
-                    <a href="" class="text-decoration-none">Forgot password</a>
+                    <a href="{{ url_for('reset_request') }}" class="text-decoration-none">Forgot password</a>
                 </small>
                 <small class="text-muted d-block mt-1">  <!--sign up-->
                     <a href="{{url_for('register')}}" class="text-decoration-none">Sign up</a>
