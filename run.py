@@ -1,4 +1,9 @@
-from blog_app import app
+from dotenv import load_dotenv
+load_dotenv() 
+
+from blog_app import create_app
+
+app = create_app()
 
 if __name__ == "__main__":
     app.run(debug=True)

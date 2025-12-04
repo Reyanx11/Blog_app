@@ -1,12 +1,12 @@
 from flask_wtf import FlaskForm
-from flask_login import current_user
 from flask_wtf.file import FileField, FileAllowed
-from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField
-from wtforms.validators import length, DataRequired,Email,EqualTo,ValidationError
+from wtforms import StringField, PasswordField, SubmitField, BooleanField
+from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
+from flask_login import current_user
 from blog_app.models import User
 
 class RegistrationForm(FlaskForm):
-    username = StringField('username', validators=[DataRequired(), length(min = 2, max= 20)])
+    username = StringField('username', validators=[DataRequired(), Length(min = 2, max= 20)])
     email = StringField('email', validators=[DataRequired(),Email()])
     password = PasswordField('password', validators=[DataRequired()])
     confirm_password = PasswordField('confirm_password', validators=[DataRequired(), EqualTo('password')])
@@ -29,7 +29,7 @@ class LoginForm(FlaskForm):
     submit = SubmitField('Login')   
 
 class UpdateAccountForm(FlaskForm):
-    username = StringField('username', validators=[DataRequired(), length(min = 2, max= 20)])
+    username = StringField('username', validators=[DataRequired(), Length(min = 2, max= 20)])
     email = StringField('email', validators=[DataRequired(),Email()])
     picture = FileField('update profile picture', validators=[FileAllowed(['.jpg','.png'])])
     submit = SubmitField('Update')
@@ -46,10 +46,6 @@ class UpdateAccountForm(FlaskForm):
             if user:
                 raise ValidationError('That email is taken. Please choose different one')
             
-class PostForm(FlaskForm):
-    title = StringField('Title', validators=[DataRequired()])
-    content = TextAreaField('Content', validators=[DataRequired()])
-    submit = SubmitField('Post')
 
 class RequestResetForm(FlaskForm):
     email = StringField('Email',
